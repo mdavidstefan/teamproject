@@ -40,7 +40,7 @@ function fetchCity() {
 
 	console.log(city);
 }
-
+fetchCity();
 const getData = async (url, renderFC) => {
 	const response = await fetch(url);
 	const data = await response.json();
@@ -71,5 +71,5 @@ function searchCity() {
 		getData(picurl + page + query + qStr, renderCity);
 		return;
 	}
-	console.log('L');
+	console.log('hülye vagy');
 }
