@@ -11,7 +11,7 @@
 	<style type="text/tailwindcss">
 		@layer components {
 				.myInput {
-					@apply block rounded-lg border border-gray-200 bg-white px-5 py-4 text-[#ffa31a];
+					@apply block rounded-xl border-2 border-[#ffa31a] bg-white px-5 py-4 text-[#ffa31a];
 				}
 				.myBtn {
 					@apply disabled:opacity-25 px-6 py-2 text-xl transition-colors duration-300 transform bg-[#ffa31a] rounded-lg hover:bg-[#808080] text-[#1b1b1b] hover:text-white font-bold;
@@ -42,6 +42,12 @@
 			img {
 				border-radius: 10px;
 			}
+
+			@media (max-width: 750px) {
+				.logo {
+					display: none;
+				}
+			}
 		</style>
 </head>
 
@@ -53,7 +59,7 @@
 		</div>
 		<div class="absolute inset-y-7 right-7">
 			<div class="flex flex-row gap-2">
-				<input class="myInput w-[300px]" type="text" placeholder="search for a city (ex. BUDAPEST)" />
+				<input class="myInput w-[300px]" type="text" placeholder="search for a city (ex. BUDAPEST)" true />
 				<button class="myBtn">find city</button>
 			</div>
 		</div>
@@ -62,16 +68,15 @@
 
 	<div class="pagination flex justify-center gap-2 mt-4"></div>
 
-	<div class="pagebuttons align-center">
-		<button id="prevpage"
-			class="bg-[#ffa31a] hover:bg-[#808080] m-2 p-2 rounded font-bold text-black hover:text-white">Previous
-			page</button>
-		<button id="nextpage"
-			class="bg-[#ffa31a] hover:bg-[#808080] m-2 p-2 rounded font-bold text-black hover:text-white">Next
-			page</button>
-	</div>
+		<div class="pagebuttons align-center flex justify-center">
+			<button id="prevpage" class="bg-[#ffa31a] hover:bg-[#808080] m-2 p-2 rounded font-bold text-black hover:text-white">Previous page</button>
+			<button id="nextpage" class="bg-[#ffa31a] hover:bg-[#808080] m-2 p-2 rounded font-bold text-black hover:text-white">Next page</button>
+		</div>
 
-	<script type="module" src="modulemain.js"></script>
-</body>
+		<div class="bg-[#292929] h-[50px] flex justify-center">
+			<p class="font-md font-bold pt-2"><span class="text-[#ffa31a]">Marton David Stefan</span><span class="text-white">, Halmosi Kornel</span></p>
+		</div>
 
+		<script type="module" src="modulemain.js"></script>
+	</body>
 </html>
