@@ -57,13 +57,13 @@ function renderCity(data) {
     imageElement.src = obj.urls.small;
     imageElement.alt = obj.alt_description;
     document.querySelector(".city-list").appendChild(imageElement);
-  });   
+  });       
 
   console.log(page);
   page++;
 }
 
-function searchCity(data) {
+function searchCity() {
   qStr = document.querySelector(".myInput").value;
   console.log(qStr);
   showPictures();
