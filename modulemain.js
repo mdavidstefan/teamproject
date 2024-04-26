@@ -71,5 +71,5 @@ function searchCity() {
 		getData(picurl + page + query + qStr, renderCity);
 		return;
 	}
-	console.log('hülye vagy');
+	console.log('Város beírva');
 }
