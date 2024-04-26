@@ -2,7 +2,7 @@ let city = [];
 
 let page = 1;
 let query = "&query=";
-let qStr = "";
+let qStr = "Budapest";
 
 let options = {
   method: "GET",
@@ -32,7 +32,7 @@ function fetchCity() {
     .then((data) => {
       console.log(data);
       city = data;
-      getData(picurl + page + query + qStr, renderCity);  
+      getData(picurl + page + query + qStr, renderCity);
     })
     .catch((err) => {
       console.log(`error ${err}`);
@@ -40,13 +40,12 @@ function fetchCity() {
 
   console.log(city);
 }
-
+fetchCity();
 const getData = async (url, renderFC) => {
   const response = await fetch(url);
   const data = await response.json();
   renderFC(data);
 };
-
 
 function renderCity(data) {
   document.querySelector(".city-list").innerHTML = "";
@@ -65,12 +64,12 @@ document.querySelector(".myBtn").addEventListener("click", searchCity);
 
 function searchCity() {
   qStr = document.querySelector(".myInput").value;
-  fetchCity()
+  fetchCity();
   console.log(city[0]);
-  if(qStr == city[0].name) {
-    document.querySelector(".city-list").innerHTML = ""
+  if (qStr == city[0].name) {
+    document.querySelector(".city-list").innerHTML = "";
     getData(picurl + page + query + qStr, renderCity);
-    return
+    return;
   }
   console.log("hülye vagy");
 }
